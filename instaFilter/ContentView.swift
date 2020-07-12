@@ -20,6 +20,9 @@ struct ContentView: View {
     @State private var showingFilterSheet = false
     @State private var processedImage: UIImage?
     @State private var filterName = "Sepia Tone"
+    @State private var isAlertPresented = false
+    @State private var alertTitle = ""
+    @State private var alertMessage = ""
 
     let context = CIContext()
 
@@ -62,14 +65,22 @@ struct ContentView: View {
                     }
                     Spacer()
                     Button("Save") {
-                        guard let processedImage = self.processedImage else { return }
+                        guard let processedImage = self.processedImage else {
+                            self.alertTitle = "Failure"
+                            self.alertMessage = "Select an image to save!"
+                            self.isAlertPresented = true
+                            return }
                         let imageSaver = ImageSaver()
                         imageSaver.successHandler = {
-                            print("Success!")
+                            self.alertTitle = "Success!"
+                            self.alertMessage = "Photo succesfully saved!"
                         }
                         imageSaver.errorHandler = {
+                            self.alertTitle = "Failure"
+                            self.alertMessage = "\($0.localizedDescription)"
                             print("Oops: \($0.localizedDescription)")
                         }
+                        self.isAlertPresented = true
                         imageSaver.writeToPhotoAlbum(image: processedImage)
                     }
                 }
@@ -91,6 +102,9 @@ struct ContentView: View {
                     .cancel()
                 ])
             }
+        .alert(isPresented: $isAlertPresented, content: {
+            Alert(title: Text(alertTitle), message: Text(alertMessage), dismissButton: .default(Text("OK")))
+        })
         }
     }
 
