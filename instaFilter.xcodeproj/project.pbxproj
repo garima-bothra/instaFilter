@@ -20,6 +20,7 @@
 /* Begin PBXFileReference section */
 		8639FBF024BA9B9000A20651 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		8639FBF224BAA3DF00A20651 /* ImageSaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSaver.swift; sourceTree = "<group>"; };
+		8639FBF424BAA78800A20651 /* instaFilter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = instaFilter.entitlements; sourceTree = "<group>"; };
 		86DF656024BA306E00C07834 /* instaFilter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = instaFilter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86DF656324BA306E00C07834 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		86DF656524BA306E00C07834 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,6 +61,7 @@
 		86DF656224BA306E00C07834 /* instaFilter */ = {
 			isa = PBXGroup;
 			children = (
+				8639FBF424BAA78800A20651 /* instaFilter.entitlements */,
 				86DF656324BA306E00C07834 /* AppDelegate.swift */,
 				86DF656524BA306E00C07834 /* SceneDelegate.swift */,
 				86DF656724BA306E00C07834 /* ContentView.swift */,
@@ -292,17 +294,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = instaFilter/instaFilter.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"instaFilter/Preview Content\"";
 				DEVELOPMENT_TEAM = 33G6XV4555;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = instaFilter/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.garimabothra.instaFilter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -312,17 +317,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = instaFilter/instaFilter.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"instaFilter/Preview Content\"";
 				DEVELOPMENT_TEAM = 33G6XV4555;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = instaFilter/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.garimabothra.instaFilter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

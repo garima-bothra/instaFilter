@@ -19,6 +19,7 @@ struct ContentView: View {
     @State private var currentFilter: CIFilter = CIFilter.sepiaTone()
     @State private var showingFilterSheet = false
     @State private var processedImage: UIImage?
+    @State private var filterName = "Sepia Tone"
 
     let context = CIContext()
 
@@ -56,7 +57,7 @@ struct ContentView: View {
                 }
                 .padding(.vertical)
                 HStack {
-                    Button("Change Filter") {
+                    Button(filterName) {
                         self.showingFilterSheet = true
                     }
                     Spacer()
@@ -102,6 +103,7 @@ struct ContentView: View {
 
     func setFilter(_ filter: CIFilter) {
         currentFilter = filter
+        self.filterName = "\(filter.name)"
         loadImage()
     }
 
